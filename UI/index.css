@@ -54,6 +54,10 @@ background-color:white;
 	border-radius:5px;
 	padding-top:17px;
     }
+    .form1{
+        height:100%;
+        width:100%;
+    }
     #loginbutton{
         color:#5F9EA0;font-weight:bold;
         background:#D3D3D3;
@@ -223,5 +227,11 @@ background-color:white;
                 background:red;;
                 border-radius:5px;border:none;
                 padding:5px;
+            }
+            #msg{
+                font-weight:bold;
+                background-color:red;
+                color:white;
+                display: none;
             }
     
