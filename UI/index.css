@@ -234,4 +234,11 @@ background-color:white;
                 color:white;
                 display: none;
             }
+            #log{
+                font-weight:bold;
+                background-color:lime;
+                text-align:center;
+                color:white;
+                display: none;
+            }
     

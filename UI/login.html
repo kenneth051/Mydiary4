@@ -3,9 +3,11 @@
 	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
         <title>Login page</title>
-		<link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" href="index.css">
+    </head>
     <body>
         <script src="index.js"></script>
+        <script src="js/login.js"></script> 
         <div class="container">
                 <div class="head"> 
                         <h1>MY DIARY</h1>
@@ -14,20 +16,31 @@
                 <div class="row1">
                         <div class="col1"><center><button id="loginbutton" onclick="register()">CLICK TO REGISTER</button></center></div>
                         <div class="col2"><h2 id="u">LOGIN PAGE</h2></div>
-                </div></br></br>
+                </div><br><br><br>
+                <div id="log"></div><br>
+                <div id="msg"></div><br>
+                <br>
+                <script>
+                    document.getElementById('log').style.display = "block";
+                    document.getElementById("log").innerHTML=sessionStorage.getItem("log");
+                    </script>
                 <div class="row3"> 
                         <div class="col6">
-                        <form class="loginform"><center>
+                        <form class="loginform" id ="loginform" method="POST"><center>
                         <span>USERNAME</span></br>
-                        <input type="text" placeholder="Enter UserName" required></br></br>
+                        <input type="text" id ="username" placeholder="Enter UserName" required></br></br>
                         <span>PASSWORD</span></br>
-                        <input type="password" placeholder="Enter PassWord" required></br></br>
-                        <button id="registerbutton"formaction="home.html">LOGIN</button><center>
+                        <input type="password" id= "password" placeholder="Enter PassWord" required></br></br>
+                        <input type="submit" id="registerbutton" value="LOGIN"><center>
                         </form>
                         </div>
                     </div>
       <p><b>VALIDATION MESSAGE HERE</b></p><br><br>
       <div class="bot"></div>      
         </div>
+        <script>
+            sessionStorage.setItem("log", "");
+        </script>
+        <script src="js/login.js"></script>
     </body>
 </html>
