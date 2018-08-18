@@ -241,4 +241,8 @@ background-color:white;
                 color:white;
                 display: none;
             }
+            #active_user{
+                font-weight:bold;
+                color:#5F9EA0;
+            }
     

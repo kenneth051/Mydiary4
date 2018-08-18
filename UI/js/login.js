@@ -11,7 +11,7 @@ function login_func(e){
                     'Accept': 'application/json',
                     'Content-type': 'application/json'
                 },
-                body: JSON.stringify(send)        
+                body: JSON.stringify(send)
         }).then(function(response) {
             return response.json();
         }).then(function(data){
@@ -19,7 +19,15 @@ function login_func(e){
                 document.getElementById('msg').style.display = "block";
                 document.getElementById("msg").innerHTML=data.message
             }if (data.status_code == 200){
+                var user_data = {
+                    firstname:data.user.firstname,
+                    lastname:data.user.lastname,
+                    username:data.user.username,
+                    email:data.user.email,
+                    gender:data.user.gender
+                }
                 localStorage.setItem("token", data.token);
+                localStorage.setItem("user", JSON.stringify(user_data));
                 window.location.replace("home.html")
             }
         })
