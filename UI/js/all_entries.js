@@ -1,6 +1,7 @@
 info = JSON.parse(window.localStorage.getItem('user'));
 active_username=info.username;
 document.getElementById("active_user").innerHTML=active_username
+
 function allentries(){
             fetch('http://127.0.0.1:5000/API/v1/entries', {
                 method: 'GET',
@@ -19,13 +20,11 @@ function allentries(){
                                 <tr>
                                 <td>${post.title}</td>
                                 <td>${post.entry_date}</td>
-                                <td><button id="entry"onclick="single()">VIEW DETAILS</td>
+                                <td><a href ="SingleEntry.html?entry_id=${post.id}" >VIEW DETAILS</a></td>
                                 </tr>
             `;
                         });
             document.getElementById("output").innerHTML=output;            
         });   
 }
-allentries()
-
 

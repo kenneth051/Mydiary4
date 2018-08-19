@@ -196,11 +196,16 @@ background-color:white;
             text-align:center;
             border-radius:5px;
         }
-        #entry{
+        td a{
             color:#5F9EA0;font-weight:bold;
             background-color:white;
-            padding:5px; border-radius:5px;
+            padding:2px; border-radius:5px;
+            margin-bottom:5px;
+            text-decoration:none;
             border:none;
+        }
+        td{
+            padding-bottom:9px;
         }
         .details{
             margin-top:20px;

@@ -14,21 +14,26 @@
                 <div class="row1">
                     <div class="col1"><center><a href="home.html" id="links">HOME</a> <button id="links"onclick="allentries()">BACK TO ENTRIES</button><button id="links"onclick="logout()">LOGOUT</button></center></div>
                     <div class="col2"><h2>ACTIVE USER: <span id="active_user"></span></h2></div>
-                </div><br><br>
-                <h3>SHOWING SINGLE ENTRY</h3>
+                </div><br><br><br><br>
+                <h3>SINGLE ENTRY</h3>
                 <div class="details">
-                    <span>TITLE</span><br>
+                    <span>TITLE</span>
                     <p id="entry_title"></p>                  
                 </div>
                 <div class="details">
-                    <span>DATE CREATED</span><br>
-                    <p id="entry_data"></p>                  
+                    <span>DATE CREATED</span>
+                    <p id="entry_date"></p>                  
                 </div>
                 <div class="details">
-                        <span>TIME CREATED</span><br>
+                        <span>TIME CREATED</span>
                         <p id="entry_time"></p>                 
-                    </div>    
+                </div>
                 <div class="details">
+                        <span>UPDATED ON</span>
+                        <p id="update"></p>                 
+                </div>    
+                <div class="details">
+                        <span>BODY</span>
                     <p id="entry_body"></p>                 
                 </div><br>
                 <center>
@@ -37,5 +42,11 @@
                 <div class="bot"></div><br> 
         </div>
         <script src="js/single_entry.js"></script>
+        <script>
+        var query = new URLSearchParams(window.location.search)
+        var entry=query.get("entry_id");
+        entry=parseInt(entry)
+        console.log(entry)
+        single_entries(entry)</script>
     </body>
 </html>

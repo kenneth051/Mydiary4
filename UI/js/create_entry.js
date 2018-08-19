@@ -25,8 +25,6 @@ function create_func(e){
                 document.getElementById('msg').style.display = "block";
                 document.getElementById("msg").innerHTML=data.message
             }if (data.status_code == 201){
-                //document.getElementById('log').style.display = "block";
-                //document.getElementById("log").innerHTML=data.message
                 sessionStorage.setItem("log", "Entry successfully created...");
                 window.location = "AllEntries.html";
             }
