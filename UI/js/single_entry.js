@@ -21,12 +21,12 @@ function single_entries(entry){
         entry_update=entry.updated;
         entry_body=entry.body;
     });
-    document.getElementById("entry_title").innerHTML=entry_title
+    
     document.getElementById("entry_time").innerHTML=entry_time
     document.getElementById("entry_body").innerHTML=entry_body
     document.getElementById("entry_date").innerHTML=entry_date
     document.getElementById("update").innerHTML=entry_update
-    
+    document.getElementById("entry_title").innerHTML=entry_title  
 }     
 });
 
