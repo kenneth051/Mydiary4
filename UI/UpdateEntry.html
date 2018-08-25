@@ -12,11 +12,11 @@
                         <h3>OUR NUMBER ONE JOURNAL</h3>
                    </div>
                 <div class="row1">
-                    <div class="col1"><center><button id="links"onclick="logout()">LOGOUT</button></center></div>
+                    <div class="col1"><center><a href="home.html" id="links">HOME</a> <button id="links"onclick="allentries()">ENTRIES</button><button id="links"onclick="logout()">LOGOUT</button></center></div>
                     <div class="col2"><h2>ACTIVE USER: <span id="active_user"></span></h2></div>
                 </div>
-                <center>
                 <h3>UPDATE AN ENTRY</h3>
+                <center>
                 <div id="log"></div><br>
                 <div id="msg"></div><br>
                 <div class="row3">
@@ -40,7 +40,7 @@
                 var query = new URLSearchParams(window.location.search);
                 var entry=query.get("entry_id");
                 entry=parseInt(entry);
-                single_entries(entry);
+                fetch_entry(entry)
         </script>
         <script>
            updating_entry(entry);

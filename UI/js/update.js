@@ -1,7 +1,7 @@
 info = JSON.parse(window.localStorage.getItem('user'));
 active_username=info.username;
 document.getElementById("active_user").innerHTML=active_username
-function single_entries(entry){
+function fetch_entry(entry){
     fetch('http://127.0.0.1:5000/API/v1/entries/'+entry, {
         method: 'GET',
         headers: {
@@ -11,8 +11,9 @@ function single_entries(entry){
 }).then(function(response) {
     return response.json();
 }).then(function(data){
-    console.log(data.result)
-    if(data.result){
+    if(data.status_code==404){
+        window.location="404.html";
+    }else{
     data.result.forEach(function(entry){
         entry_title=entry.title;
         entry_body=entry.body;
@@ -41,13 +42,17 @@ function updating_entry(entry){
             }).then(function(response) {
                 return response.json();
             }).then(function(data){
-                if (data.status_code == 200){
-                    sessionStorage.setItem("log", "Entry has been hsuccessfully updated...");
+                if(data.status_code == 404){
+                    window.location="404.html";
+                }else if (data.status_code == 200){
+                    sessionStorage.setItem("log", "Entry has been successfully updated...");
                     window.location = "AllEntries.html";
-                }else if (data.status_code != 200){
+                }else{
                     document.getElementById('msg').style.display = "block";
                     document.getElementById("msg").innerHTML=data.message
                 }
-            })
+            }).catch(function(err){
+                window.location="error.html";
+            });
     });
 }

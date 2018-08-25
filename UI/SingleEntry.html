@@ -12,7 +12,7 @@
                         <h3>OUR NUMBER ONE JOURNAL</h3>
                    </div>
                 <div class="row1">
-                    <div class="col1"><center><a href="home.html" id="links">HOME</a> <button id="links"onclick="allentries()">BACK TO ENTRIES</button><button id="links"onclick="logout()">LOGOUT</button></center></div>
+                    <div class="col1"><center><a href="home.html" id="links">HOME</a> <button id="links"onclick="allentries()">ENTRIES</button><button id="links"onclick="logout()">LOGOUT</button></center></div>
                     <div class="col2"><h2>ACTIVE USER: <span id="active_user"></span></h2></div>
                 </div><br><br><br><br>
                 <h3>SINGLE ENTRY</h3>
@@ -47,8 +47,8 @@
         var query = new URLSearchParams(window.location.search)
         var entry=query.get("entry_id");
         entry=parseInt(entry)
-        edit=`<a href ="UpdateEntry.html?entry_id=${entry}";>UPDATE ENTRY</a>`
+        edit=`<a href ="UpdateEntry.html?entry_id=${entry}"id="links";>UPDATE ENTRY</a>`
         document.getElementById("edit").innerHTML=edit;
-        single_entries(entry)</script>
+        fetch_entry(entry)</script>
     </body>
 </html>
