@@ -28,7 +28,9 @@ function func(e){
                 sessionStorage.setItem("log", "YOU HAVE SUCCESSFULLY REGISTERED, LOGIN NOW...");
                 window.location = "login.html";
             }
-        })
+        }).catch(function(err){
+            window.location="error.html";
+        });
     }else{
         document.getElementById('msg').style.display = "block";
         document.getElementById("msg").innerHTML = "ERROR! Passwords do not MATCH..."

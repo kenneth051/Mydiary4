@@ -1,6 +1,10 @@
 info = JSON.parse(window.localStorage.getItem('user'));
+if(info){
 active_username=info.username;
-document.getElementById("active_user").innerHTML=active_username
+document.getElementById("active_user").innerHTML=active_username;
+}else{
+    window.location="login.html";
+}
 document.getElementById('create').addEventListener('submit', create_func)
 function create_func(e){
     e.preventDefault();
@@ -21,12 +25,13 @@ function create_func(e){
             return response.json();
         }).then(function(data){
             if (data.status_code != 201){
-                console.log(data)
                 document.getElementById('msg').style.display = "block";
                 document.getElementById("msg").innerHTML=data.message
             }if (data.status_code == 201){
                 sessionStorage.setItem("log", "Entry successfully created...");
                 window.location = "AllEntries.html";
             }
-        })
+        }).catch(function(err){
+            window.location="error.html";
+        });
 }

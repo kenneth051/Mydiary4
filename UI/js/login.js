@@ -30,5 +30,7 @@ function login_func(e){
                 localStorage.setItem("user", JSON.stringify(user_data));
                 window.location.replace("home.html")
             }
+        }).catch(function(err){
+            window.location="error.html";
         })
 }

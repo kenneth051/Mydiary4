@@ -10,10 +10,9 @@ function allentries(){
                     'Authorization': 'Bearer '+localStorage.getItem("token")
                 }      
         }).then(function(response) {
-            return response.json();
+                return response.json(); 
         }).then(function(data){
             entries= data.result;
-            console.log(entries)
             let output="";
             data.result.forEach(function(post){
             output +=`
@@ -25,6 +24,8 @@ function allentries(){
             `;
                         });
             document.getElementById("output").innerHTML=output;            
-        });   
+        }).catch(function(err){
+            window.location="error.html";
+        })
 }
 

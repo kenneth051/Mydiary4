@@ -10,21 +10,12 @@ function home(){
 function profile(){
 	window.location="profile.html";
 }
-function editprofile(){
-	window.location="EditProfile.html";
-}
 function allentries(){
 	window.location="AllEntries.html";
 }
-function single(){
-	window.location="SingleEntry.html";
-}
 function logout(){
+	localStorage.removeItem("user");
+	localStorage.removeItem("token")
 	window.location="login.html";
 }
-function update(){
-	window.location="UpdateEntry.html";
-}
-function reminders(){
-	window.location="Reminders.html";
-}
+

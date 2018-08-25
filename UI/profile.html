@@ -12,31 +12,28 @@
                         <h3>OUR NUMBER ONE JOURNAL</h3>
                    </div>
                 <div class="row1">
-                    <div class="col1"><center><a href="home.html" id="links">HOME</a> <button id="links" onclick="profile()">PROFILE</button><button id="links"onclick="reminders()">REMINDERS(0)</button><button id="links"onclick="logout()">LOGOUT</button></center></div>
-                    <div class="col2"><h2 id="u">ACTIVE USER: </h2></div>
+                    <div class="col1"><center><a href="home.html" id="links">HOME</a> <button id="links" onclick="profile()">PROFILE</button><button id="links"onclick="logout()">LOGOUT</button></center></div>
+                    <div class="col2"><h2>ACTIVE USER: <span id="active_user"></span></h2></div>
                 </div></br>
-                <button id="links" onclick="editprofile()">EDIT PROFILE</button>
                 <h3>PROFILE PAGE</h3>
                 <div class="details">
-                <span>PROFILE PICTURE</span>
-                <div class="pic">
-                <img src="../images/pp.jpg" height=100% width=100%>
-                </div>
-                FIRSTNAME :<br><span>JOHN</span><br>
-                LASTNAME :<br><span>SMITH</span><br>
-                USERNAME :<br><span> HARRY POTTER</span><br>
-                GENDER :<br><span>MALE</span><br>
+                FIRSTNAME :<br><span id="firstname"></span><br>
+                LASTNAME :<br><span id="lastname"></span><br>
+                USERNAME :<br><span id="username"></span><br>
+                EMAIL :<br><span id="email"></span><br>
+                GENDER :<br><span id="gender"></span><br>
                 NUMBER OF ENTRIES SINCE REGISTRATION:<br><span>20</span><br>
                 </div>
-                <div class="details">
+                <!--<div class="details">
                     SET REMINDER<br>
                         <form>
                            <span>CHECK TO SET REMINDER :<input type="checkbox" required></span><br><br>
                             <button type="submit" id="loginbutton" formaction="profile.html">SET REMINDER</button></center>
                             </form>
-                </div><br>       
+                </div><br>-->      
              <br><br>
                 <div class="bot"></div>   
         </div>
+        <script src="js/profile.js"></script>
     </body>
 </html>
