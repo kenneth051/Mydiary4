@@ -13,42 +13,42 @@
                    </div>
                 <div class="row1">
                     <div class="col1"><center><a href="home.html" id="links">HOME</a> <button id="links"onclick="allentries()">BACK TO ENTRIES</button><button id="links"onclick="logout()">LOGOUT</button></center></div>
-                    <div class="col2"><h2 id="u">ACTIVE USER: </h2></div>
-                </div><br><br>
-                <h3>SHOWING SINGLE ENTRY</h3>
+                    <div class="col2"><h2>ACTIVE USER: <span id="active_user"></span></h2></div>
+                </div><br><br><br><br>
+                <h3>SINGLE ENTRY</h3>
                 <div class="details">
-                    <span>TITLE</span><br>
-                    ANDELA BOOTCAMP 10 CHALLENGE 1                  
+                    <span>TITLE</span>
+                    <p id="entry_title"></p>                  
                 </div>
                 <div class="details">
-                    <span>DATE CREATED</span><br>
-                    15-7-2018                  
+                    <span>DATE CREATED</span>
+                    <p id="entry_date"></p>                  
                 </div>
                 <div class="details">
-                        <span>TIME CREATED</span><br>
-                        12:34PM                 
-                    </div>    
+                        <span>TIME CREATED</span>
+                        <p id="entry_time"></p>                 
+                </div>
                 <div class="details">
-                    THIS IS MY VERY FIRST ENTRY CONCERNING MY SECOND BOOTCAMP AT ANDELA AND I VOW TO DO MY VERY BEST
-                    TO MAKE IT THROUGH. I AM GOING TO GIVE IT MY ALL NO MATTER WHAT HAPPENS AND WITH GOD FIRST ON MY 
-                    SIDE, I WILL DEFINETLY MAKE IT<br>
-                    THIS IS MY VERY FIRST ENTRY CONCERNING MY SECOND BOOTCAMP AT ANDELA AND I VOW TO DO MY VERY BEST
-                    TO MAKE IT THROUGH. I AM GOING TO GIVE IT MY ALL NO MATTER WHAT HAPPENS AND WITH GOD FIRST ON MY 
-                    SIDE, I WILL DEFINETLY MAKE IT<br>
-                    THIS IS MY VERY FIRST ENTRY CONCERNING MY SECOND BOOTCAMP AT ANDELA AND I VOW TO DO MY VERY BEST
-                    TO MAKE IT THROUGH. I AM GOING TO GIVE IT MY ALL NO MATTER WHAT HAPPENS AND WITH GOD FIRST ON MY 
-                    SIDE, I WILL DEFINETLY MAKE IT<br>
-                    THIS IS MY VERY FIRST ENTRY CONCERNING MY SECOND BOOTCAMP AT ANDELA AND I VOW TO DO MY VERY BEST
-                    TO MAKE IT THROUGH. I AM GOING TO GIVE IT MY ALL NO MATTER WHAT HAPPENS AND WITH GOD FIRST ON MY 
-                    SIDE, I WILL DEFINETLY MAKE IT<br>
-                    THIS IS MY VERY FIRST ENTRY CONCERNING MY SECOND BOOTCAMP AT ANDELA AND I VOW TO DO MY VERY BEST
-                    TO MAKE IT THROUGH. I AM GOING TO GIVE IT MY ALL NO MATTER WHAT HAPPENS AND WITH GOD FIRST ON MY 
-                    SIDE, I WILL DEFINETLY MAKE IT                 
+                        <span>UPDATED ON</span>
+                        <p id="update"></p>                 
+                </div>    
+                <div class="details">
+                        <span>BODY</span>
+                    <p id="entry_body"></p>                 
                 </div><br>
                 <center>
-                <button id="registerbutton"onclick="update()">UPDATE ENTRY</button></center>         
+                    <div id="edit"></div>
+                </center>         
                 <br>
                 <div class="bot"></div><br> 
         </div>
+        <script src="js/single_entry.js"></script>
+        <script>
+        var query = new URLSearchParams(window.location.search)
+        var entry=query.get("entry_id");
+        entry=parseInt(entry)
+        edit=`<a href ="UpdateEntry.html?entry_id=${entry}";>UPDATE ENTRY</a>`
+        document.getElementById("edit").innerHTML=edit;
+        single_entries(entry)</script>
     </body>
 </html>
