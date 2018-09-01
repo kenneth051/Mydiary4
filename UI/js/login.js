@@ -4,7 +4,7 @@ function login_func(e){
     var username1 = document.getElementById('username').value;
     var password1 = document.getElementById('password').value;
             const send = {username:username1,password:password1};
-            fetch('http://127.0.0.1:5000/API/v1/auth/users/login', {
+            fetch('https://infinite-crag-58351.herokuapp.com/API/v1/auth/users/login', {
                 method: 'POST',
                 cache: 'no-cache',
                 headers: {
@@ -32,5 +32,5 @@ function login_func(e){
             }
         }).catch(function(err){
             window.location="error.html";
-        })
+        });
 }

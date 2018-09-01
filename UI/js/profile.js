@@ -9,3 +9,17 @@ if(info){
 }else{
     window.location="login.html";
 }
+    fetch('https://infinite-crag-58351.herokuapp.com/API/v1/entries', {
+        method: 'GET',
+        headers: {
+            'Content-type': 'application/json',
+            'Authorization': 'Bearer '+localStorage.getItem("token")
+        }      
+}).then(function(response) {
+        return response.json(); 
+}).then(function(data){
+    document.getElementById("number").innerHTML=data.number;            
+}).catch(function(err){
+    window.location="error.html";
+})
+

@@ -3,7 +3,7 @@ active_username=info.username;
 document.getElementById("active_user").innerHTML=active_username
 
 function allentries(){
-            fetch('http://127.0.0.1:5000/API/v1/entries', {
+            fetch('https://infinite-crag-58351.herokuapp.com/API/v1/entries', {
                 method: 'GET',
                 headers: {
                     'Content-type': 'application/json',
