@@ -18,8 +18,10 @@
                 <div id="log"></div>
                 <h3>ALL ENTRIES</h3>
                 <script>
+                    if(sessionStorage.getItem("log")){
                         document.getElementById('log').style.display = "block";
                         document.getElementById("log").innerHTML=sessionStorage.getItem("log");
+                    }
                 </script>
                 <div class="row2">
                         <div class="col7"><center>

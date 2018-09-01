@@ -6,8 +6,7 @@
         <link rel="stylesheet" href="index.css">
     </head>
     <body>
-        <script src="index.js"></script>
-        <script src="js/login.js"></script> 
+        <script src="index.js"></script> 
         <div class="container">
                 <div class="head"> 
                         <h1>MY DIARY</h1>
@@ -21,26 +20,27 @@
                 <div id="msg"></div><br>
                 <br>
                 <script>
+                    if(sessionStorage.getItem("log")){
                     document.getElementById('log').style.display = "block";
                     document.getElementById("log").innerHTML=sessionStorage.getItem("log");
+                    }
                     </script>
-                <div class="row3"> 
+                <div class="row3">
                         <div class="col6">
                         <form class="loginform" id ="loginform" method="POST"><center>
                         <span>USERNAME</span></br>
                         <input type="text" id ="username" placeholder="Enter UserName" required></br></br>
                         <span>PASSWORD</span></br>
-                        <input type="password" id= "password" placeholder="Enter PassWord" required></br></br>
+                        <input type="password" id= "password" placeholder="Enter PassWord" required><br><br>
                         <input type="submit" id="registerbutton" value="LOGIN"><center>
                         </form>
                         </div>
-                    </div>
-      <p><b>VALIDATION MESSAGE HERE</b></p><br><br>
+                    </div><br><br>
       <div class="bot"></div>      
         </div>
+        <script src="js/login.js"></script>
         <script>
             sessionStorage.removeItem("log");
         </script>
-        <script src="js/login.js"></script>
     </body>
 </html>

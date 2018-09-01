@@ -12,7 +12,7 @@ function create_func(e){
     var body1 = document.getElementById('body').value; 
     console.log(body1)
             const send = {title:title1,body:body1};
-            fetch('http://127.0.0.1:5000/API/v1/entries', {
+            fetch('https://infinite-crag-58351.herokuapp.com/API/v1/entries', {
                 method: 'POST',
                 cache: 'no-cache',
                 headers: {

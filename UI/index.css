@@ -120,7 +120,7 @@ background-color:white;
             height:100%;
             border-radius:5px;
             font-weight:bold;
-            background-color:#5F9EA0;
+            background-color:#5F9EA0;   
         }
         .loginform{
             padding-top:60px;
@@ -235,16 +235,17 @@ background-color:white;
             }
             #msg{
                 font-weight:bold;
+                height:5%;
                 background-color:red;
                 color:white;
                 display: none;
             }
             #log{
-                font-weight:bold;
-                background-color:lime;
-                text-align:center;
-                color:white;
                 display: none;
+                font-weight:bold;
+                height:5%;
+                background-color:lime;
+                color:white;  
             }
             #active_user{
                 font-weight:bold;
@@ -259,5 +260,17 @@ background-color:white;
                 color:white;
                 font-weight:bold;
                 padding-bottom:40px;
+            }
+            #title{
+                text-transform:uppercase;
+            }
+            #entry_title{
+                text-transform:uppercase;
+            }
+            #body{
+                text-transform:lowercase;
+            }
+            #entry_body{
+                text-transform:lowercase;
             }
     

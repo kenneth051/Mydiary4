@@ -2,7 +2,7 @@ info = JSON.parse(window.localStorage.getItem('user'));
 active_username=info.username;
 document.getElementById("active_user").innerHTML=active_username
 function fetch_entry(entry){
-    fetch('http://127.0.0.1:5000/API/v1/entries/'+entry, {
+    fetch('https://infinite-crag-58351.herokuapp.com/API/v1/entries/'+entry, {
         method: 'GET',
         headers: {
             'Content-type': 'application/json',
@@ -30,7 +30,7 @@ function updating_entry(entry){
     var title1 = document.getElementById('entry_title').value;
     var body1 = document.getElementById('entry_body').value; 
                 const send = {title:title1,body:body1};
-                fetch('http://127.0.0.1:5000/API/v1/entries/'+entry, {
+                fetch('https://infinite-crag-58351.herokuapp.com/API/v1/entries/'+entry, {
                     method: 'PUT',
                     cache: 'no-cache',
                     headers: {

@@ -10,7 +10,7 @@ function func(e){
     var gender1 = document.getElementById('gender').value;
     if(password1 === confirmpassword1){
             const send = {firstname:firstname1, lastname:lastname1,username:username1,email:email1, password:password1, gender:gender1};
-            fetch('http://127.0.0.1:5000/API/v1/auth/user/signup', {
+            fetch('https://infinite-crag-58351.herokuapp.com/API/v1/auth/user/signup', {
                 method: 'POST',
                 cache: 'no-cache',
                 headers: {
