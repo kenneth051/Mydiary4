@@ -1,4 +1,4 @@
-info = JSON.parse(window.localStorage.getItem('user'));
+var info = JSON.parse(window.localStorage.getItem('user'));
 if(info){
     document.getElementById("active_user").innerHTML=info.username;
     document.getElementById("username").innerHTML=info.username;
@@ -20,6 +20,5 @@ if(info){
 }).then(function(data){
     document.getElementById("number").innerHTML=data.number;            
 }).catch(function(err){
-    window.location="error.html";
-})
-
+    window.location="login.html";
+});
