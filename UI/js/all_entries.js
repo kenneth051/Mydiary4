@@ -25,7 +25,7 @@ function allentries(){
                         });
             document.getElementById("output").innerHTML=output;            
         }).catch(function(err){
-            window.location="error.html";
+            window.location="login.html";
         })
 }
 

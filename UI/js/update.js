@@ -52,7 +52,7 @@ function updating_entry(entry){
                     document.getElementById("msg").innerHTML=data.message
                 }
             }).catch(function(err){
-                window.location="error.html";
+                window.location="login.html";
             });
     });
 }

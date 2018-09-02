@@ -31,6 +31,6 @@ function login_func(e){
                 window.location.replace("home.html")
             }
         }).catch(function(err){
-            window.location="error.html";
+            window.location="login.html";
         });
 }

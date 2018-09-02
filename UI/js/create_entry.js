@@ -32,6 +32,6 @@ function create_func(e){
                 window.location = "AllEntries.html";
             }
         }).catch(function(err){
-            window.location="error.html";
+            window.location="login.html";
         });
 }
