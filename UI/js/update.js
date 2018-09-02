@@ -1,6 +1,6 @@
-info = JSON.parse(window.localStorage.getItem('user'));
+let info = JSON.parse(window.localStorage.getItem('user'));
 if(info){
-active_username=info.username;
+let active_username=info.username;
 document.getElementById("active_user").innerHTML=active_username;
 }else{
     window.location="login.html";
@@ -22,8 +22,8 @@ function fetch_entry(entry){
         entry_title=entry.title;
         entry_body=entry.body;
     });
-    document.getElementById("entry_body").innerHTML=entry_body
-    document.getElementById("entry_title").value=entry_title   
+    document.getElementById("entry_body").innerHTML=entry_body;
+    document.getElementById("entry_title").value=entry_title;  
 }     
 }).catch(function(err){
     window.location="login.html";
@@ -55,7 +55,7 @@ function updating_entry(entry){
                     window.location = "AllEntries.html";
                 }else{
                     document.getElementById('msg').style.display = "block";
-                    document.getElementById("msg").innerHTML=data.message
+                    document.getElementById("msg").innerHTML=data.message;
                 }
             }).catch(function(err){
                 window.location="login.html";

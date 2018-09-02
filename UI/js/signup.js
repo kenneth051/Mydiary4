@@ -1,4 +1,4 @@
-document.getElementById('signupform').addEventListener('submit', func)
+document.getElementById('signupform').addEventListener('submit', func);
 function func(e){
     e.preventDefault();
     var firstname1 = document.getElementById('firstname').value;
@@ -23,7 +23,7 @@ function func(e){
         }).then(function(data){
             if (data.status_code != 201){
                 document.getElementById('msg').style.display = "block";
-                document.getElementById("msg").innerHTML=data.message
+                document.getElementById("msg").innerHTML=data.message;
             }if (data.status_code == 201){
                 sessionStorage.setItem("log", "YOU HAVE SUCCESSFULLY REGISTERED, LOGIN NOW...");
                 window.location = "login.html";
@@ -33,6 +33,6 @@ function func(e){
         });
     }else{
         document.getElementById('msg').style.display = "block";
-        document.getElementById("msg").innerHTML = "ERROR! Passwords do not MATCH..."
+        document.getElementById("msg").innerHTML = "ERROR! Passwords do not MATCH...";
     }
 }

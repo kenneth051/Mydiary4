@@ -1,4 +1,4 @@
-document.getElementById('loginform').addEventListener('submit', login_func)
+document.getElementById('loginform').addEventListener('submit', login_func);
 function login_func(e){
     e.preventDefault();
     var username1 = document.getElementById('username').value;
@@ -17,7 +17,7 @@ function login_func(e){
         }).then(function(data){
             if (data.status_code != 200){
                 document.getElementById('msg').style.display = "block";
-                document.getElementById("msg").innerHTML=data.message
+                document.getElementById("msg").innerHTML=data.message;
             }if (data.status_code == 200){
                 var user_data = {
                     firstname:data.user.firstname,
@@ -25,10 +25,10 @@ function login_func(e){
                     username:data.user.username,
                     email:data.user.email,
                     gender:data.user.gender
-                }
+                };
                 localStorage.setItem("token", data.token);
                 localStorage.setItem("user", JSON.stringify(user_data));
-                window.location.replace("home.html")
+                window.location.replace("home.html");
             }
         }).catch(function(err){
             window.location="login.html";
