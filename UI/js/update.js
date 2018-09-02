@@ -21,6 +21,8 @@ function fetch_entry(entry){
     document.getElementById("entry_body").innerHTML=entry_body
     document.getElementById("entry_title").value=entry_title   
 }     
+}).catch(function(err){
+    window.location="login.html";
 });
 }
 
