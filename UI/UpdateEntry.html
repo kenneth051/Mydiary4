@@ -5,51 +5,45 @@
         <title>Update Page</title>
 		<link rel="stylesheet" href="index.css">
     <body>
-        <script src="index.js"></script> 
+        <script src="index.js"></script>
         <div class="container">
                 <div class="head"> 
                         <h1>MY DIARY</h1>
                         <h3>OUR NUMBER ONE JOURNAL</h3>
                    </div>
                 <div class="row1">
-                    <div class="col1"><center><button id="links"onclick="single()">BACK TO ENTRY</button><button id="links"onclick="logout()">LOGOUT</button></center></div>
-                    <div class="col2"><h2 id="u">ACTIVE USER: </h2></div>
+                    <div class="col1"><center><a href="home.html" id="links">HOME</a> <button id="links"onclick="allentries()">ENTRIES</button><button id="links"onclick="logout()">LOGOUT</button></center></div>
+                    <div class="col2"><h2>ACTIVE USER: <span id="active_user"></span></h2></div>
                 </div>
-                <center>
                 <h3>UPDATE AN ENTRY</h3>
+                <center>
+                <div id="log"></div><br>
+                <div id="msg"></div><br>
                 <div class="row3">
                 <div class="col8">
-                        <form>
-                            <br>
-                                <input type="text"name="title"placeholder="ENTER HEADING / TITLE"value="ANDELA BOOTCAMP 10 CHALLENGE 1"required><br><br>
-                               <textarea placeholder="WRITE NEW ENTRY HERE..."required>
- THIS IS MY VERY FIRST ENTRY CONCERNING MY SECOND BOOTCAMP AT ANDELA AND I VOW TO DO MY VERY BEST
-TO MAKE IT THROUGH. I AM GOING TO GIVE IT MY ALL NO MATTER WHAT HAPPENS AND WITH GOD FIRST ON MY 
-SIDE, I WILL DEFINETLY MAKE IT
-
-THIS IS MY VERY FIRST ENTRY CONCERNING MY SECOND BOOTCAMP AT ANDELA AND I VOW TO DO MY VERY BEST
-TO MAKE IT THROUGH. I AM GOING TO GIVE IT MY ALL NO MATTER WHAT HAPPENS AND WITH GOD FIRST ON MY 
-SIDE, I WILL DEFINETLY MAKE IT
-
-THIS IS MY VERY FIRST ENTRY CONCERNING MY SECOND BOOTCAMP AT ANDELA AND I VOW TO DO MY VERY BEST
-TO MAKE IT THROUGH. I AM GOING TO GIVE IT MY ALL NO MATTER WHAT HAPPENS AND WITH GOD FIRST ON MY 
-SIDE, I WILL DEFINETLY MAKE IT
-
-THIS IS MY VERY FIRST ENTRY CONCERNING MY SECOND BOOTCAMP AT ANDELA AND I VOW TO DO MY VERY BEST
-TO MAKE IT THROUGH. I AM GOING TO GIVE IT MY ALL NO MATTER WHAT HAPPENS AND WITH GOD FIRST ON MY 
-SIDE, I WILL DEFINETLY MAKE IT
-THIS IS MY VERY FIRST ENTRY CONCERNING MY SECOND BOOTCAMP AT ANDELA AND I VOW TO DO MY VERY BEST
-TO MAKE IT THROUGH. I AM GOING TO GIVE IT MY ALL NO MATTER WHAT HAPPENS AND WITH GOD FIRST ON MY 
-SIDE, I WILL DEFINETLY MAKE IT
+                        <form method = "POST" id="updatingformdata">
+                            <br><input type="hidden" name="_METHOD" value="PUT"/>
+                                <input id="entry_title" type="text" value="" required><br><br>
+                               <textarea id="entry_body" value ="" placeholder="WRITE NEW ENTRY HERE..."required>
                                </textarea>
                                      <br>
-                                     <button id="registerbutton" formaction="SingleEntry.html">UPDATE</button></center>
+                                <input type="submit" id="registerbutton" value="UPDATE"></center>
                                  </center>
                             </form>                     
                 </div>
             </div>         
                 <br><br>
-                <div class="bot"></div>   
+        <div class="bot"></div>   
         </div>
+        <script src="js/update.js"></script>
+        <script>
+                var query = new URLSearchParams(window.location.search);
+                var entry=query.get("entry_id");
+                entry=parseInt(entry);
+                fetch_entry(entry)
+        </script>
+        <script>
+           updating_entry(entry);
+        </script>     
     </body>
 </html>

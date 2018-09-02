@@ -10,7 +10,7 @@ function func(e){
     var gender1 = document.getElementById('gender').value;
     if(password1 === confirmpassword1){
             const send = {firstname:firstname1, lastname:lastname1,username:username1,email:email1, password:password1, gender:gender1};
-            fetch('https://cryptic-basin-28780.herokuapp.com/API/v1/auth/user/signup', {
+            fetch('https://infinite-crag-58351.herokuapp.com/API/v1/auth/user/signup', {
                 method: 'POST',
                 cache: 'no-cache',
                 headers: {
@@ -25,13 +25,14 @@ function func(e){
                 document.getElementById('msg').style.display = "block";
                 document.getElementById("msg").innerHTML=data.message
             }if (data.status_code == 201){
-                document.getElementById("msg").innerHTML = "#redirect to login page here "
+                sessionStorage.setItem("log", "YOU HAVE SUCCESSFULLY REGISTERED, LOGIN NOW...");
+                window.location = "login.html";
             }
-
-        })
+        }).catch(function(err){
+            window.location="error.html";
+        });
     }else{
         document.getElementById('msg').style.display = "block";
         document.getElementById("msg").innerHTML = "ERROR! Passwords do not MATCH..."
     }
-
 }

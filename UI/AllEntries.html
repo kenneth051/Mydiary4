@@ -12,10 +12,17 @@
                         <h3>OUR NUMBER ONE JOURNAL</h3>
                    </div>
                 <div class="row1">
-                    <div class="col1"><center><a href="home.html" id="links">HOME</a> <button id="links" onclick="profile()">PROFILE</button><button id="links"onclick="reminder()">REMINDERS(0)</button><button id="links"onclick="logout()">LOGOUT</button></center></div>
-                    <div class="col2"><h2 id="u">ACTIVE USER: </h2></div>
-                </div></br>
+                    <div class="col1"><center><a href="home.html" id="links">HOME</a> <button id="links" onclick="profile()">PROFILE</button><button id="links"onclick="logout()">LOGOUT</button></center></div>
+                    <div class="col2"><h2>ACTIVE USER: <span id="active_user"></span></h2></div>
+                </div><br><br><br><br>
+                <div id="log"></div>
                 <h3>ALL ENTRIES</h3>
+                <script>
+                    if(sessionStorage.getItem("log")){
+                        document.getElementById('log').style.display = "block";
+                        document.getElementById("log").innerHTML=sessionStorage.getItem("log");
+                    }
+                </script>
                 <div class="row2">
                         <div class="col7"><center>
                             <button class="NotActive"onclick="home()"><h3>WRITE IN DIARY</h3></button><br><br>
@@ -29,16 +36,18 @@
                                 <th>TITLE</th>
                                 <th>DATE CREATED</th>
                                 <th>DETAILS</th> </tr>
-                                <tr><td></td><td></td><td></td></tr>
-                                <tr>
-                                <td>ANDELA BOOTCAMP 10 CHALLENGE 1</td>
-                                <td>15-7-2018</td>
-                                <td><button id="entry"onclick="single()">VIEW DETAILS</td>
-                                </tr>
+                                <tbody id="output"></tbody>
                         </table>   
                            </div>
                 </div><br><br>
                 <div class="bot"></div>   
         </div>
+        <script src="js/all_entries.js"></script>
+        <script>
+        allentries()
+        </script>
+        <script>
+            sessionStorage.removeItem("log");
+        </script>
     </body>
 </html>
