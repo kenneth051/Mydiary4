@@ -29,7 +29,7 @@ function func(e){
                 window.location = "login.html";
             }
         }).catch(function(err){
-            window.location="error.html";
+            window.location="index.html";
         });
     }else{
         document.getElementById('msg').style.display = "block";

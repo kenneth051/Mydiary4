@@ -20,6 +20,6 @@ if(info){
 }).then(function(data){
     document.getElementById("number").innerHTML=data.number;            
 }).catch(function(err){
-    window.location="error.html";
+    window.location="login.html";
 })
 

@@ -29,6 +29,6 @@ function fetch_entry(entry){
     document.getElementById("entry_title").innerHTML=entry_title  
 }
 }).catch(function(err){
-    window.location="error.html";
+    window.location="login.html";
 })
 }
