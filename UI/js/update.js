@@ -1,6 +1,10 @@
 info = JSON.parse(window.localStorage.getItem('user'));
+if(info){
 active_username=info.username;
-document.getElementById("active_user").innerHTML=active_username
+document.getElementById("active_user").innerHTML=active_username;
+}else{
+    window.location="login.html";
+}
 function fetch_entry(entry){
     fetch('https://infinite-crag-58351.herokuapp.com/API/v1/entries/'+entry, {
         method: 'GET',
