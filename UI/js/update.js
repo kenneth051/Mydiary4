@@ -32,6 +32,7 @@ function fetch_entry(entry){
 
 function updating_entry(entry){
     document.getElementById('updatingformdata').addEventListener('submit',function login_func(e){
+    document.getElementById('load').style.display = "block";
     e.preventDefault();
     var title1 = document.getElementById('entry_title').value;
     var body1 = document.getElementById('entry_body').value; 
@@ -48,6 +49,7 @@ function updating_entry(entry){
             }).then(function(response) {
                 return response.json();
             }).then(function(data){
+                document.getElementById('load').style.display = "none";
                 if(data.status_code == 404){
                     window.location="404.html";
                 }else if (data.status_code == 200){
