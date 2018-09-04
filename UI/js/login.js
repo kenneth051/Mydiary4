@@ -1,6 +1,7 @@
 document.getElementById('loginform').addEventListener('submit', login_func);
 function login_func(e){
     e.preventDefault();
+    document.getElementById('load').style.display = "block";
     var username1 = document.getElementById('username').value;
     var password1 = document.getElementById('password').value;
             const send = {username:username1,password:password1};
@@ -15,6 +16,7 @@ function login_func(e){
         }).then(function(response) {
             return response.json();
         }).then(function(data){
+            document.getElementById('load').style.display = "none";
             if (data.status_code != 200){
                 document.getElementById('msg').style.display = "block";
                 document.getElementById("msg").innerHTML=data.message;

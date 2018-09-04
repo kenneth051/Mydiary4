@@ -237,8 +237,9 @@ background-color:white;
                 font-weight:bold;
                 height:5%;
                 background-color:red;
-                color:white;
-                display: none;
+                padding:5px;
+                display:none;
+                color:white;   
             }
             #log{
                 display: none;
@@ -272,5 +273,11 @@ background-color:white;
             }
             #entry_body{
                 text-transform:lowercase;
+            }
+            #load{
+                color:lime;
+                font-weight:bold;
+                font-size:30px;
+                display:none;
             }
     
