@@ -7,6 +7,7 @@ document.getElementById("active_user").innerHTML=active_username;
 }
 document.getElementById('create').addEventListener('submit', create_func);
 function create_func(e){
+    document.getElementById('load').style.display = "block";
     e.preventDefault();
     var title1 = document.getElementById('title').value;
     var body1 = document.getElementById('body').value; 
@@ -23,6 +24,7 @@ function create_func(e){
         }).then(function(response) {
             return response.json();
         }).then(function(data){
+            document.getElementById('load').style.display = "none";
             if (data.status_code != 201){
                 document.getElementById('msg').style.display = "block";
                 document.getElementById("msg").innerHTML=data.message;
