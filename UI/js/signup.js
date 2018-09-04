@@ -1,6 +1,7 @@
 document.getElementById('signupform').addEventListener('submit', func);
 function func(e){
     e.preventDefault();
+    document.getElementById('load').style.display = "block";
     var firstname1 = document.getElementById('firstname').value;
     var lastname1 = document.getElementById('lastname').value;
     var username1 = document.getElementById('username').value;
@@ -21,6 +22,7 @@ function func(e){
         }).then(function(response) {
             return response.json();
         }).then(function(data){
+            document.getElementById('load').style.display = "none";
             if (data.status_code != 201){
                 document.getElementById('msg').style.display = "block";
                 document.getElementById("msg").innerHTML=data.message;
